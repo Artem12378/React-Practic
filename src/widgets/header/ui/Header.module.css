@@ -1,0 +1,139 @@
+.header {
+    background: #f8fafc;
+    padding: 12px 32px 12px 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+/* Верхняя строка — Страна и Вход | Регистрация */
+.СountryAndAuth {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 100;
+    flex-wrap: wrap; /* Добавлено: чтобы на узких экранах блоки не перекрывались */
+    gap: 8px;        /* Добавлено: отступ между строками при переносе */
+}
+
+.HeaderCountry {
+    font-size: 0.75rem;
+    color: #6b7280;
+    cursor: pointer;
+    font-weight: 700;
+    white-space: nowrap; /* Оставляем, но перенос строки спасёт от переполнения */
+}
+
+.LogButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;   /* Добавлено: кнопки тоже могут переноситься */
+    justify-content: flex-end;
+}
+
+.LogButton button {
+    background: none;
+    border: none;
+    font-size: 0.75rem;
+    color: #6b7280;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 0;
+    white-space: nowrap;
+}
+
+.LogButton button:hover {
+    color: #1e293b;
+}
+
+.LogButton span {
+    color: #cbd5e1;
+    font-size: 0.7rem;
+}
+
+/* Нижняя строка — логотип, поиск, навигация */
+.bottomRow {
+    display: grid;
+    grid-template-columns: auto 1fr auto; /* 1fr забирает всё оставшееся пространство */
+    align-items: center;                  /* центрируем по вертикали */
+    gap: 24px;                            /* расстояние между колонками */
+    flex-wrap: wrap;                      /* резерв для мобильных */
+}
+
+.logo {
+    width: 200px;
+    height: 50px;
+    flex-shrink: 0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;   /* центрирует внутренний div */
+    line-height: 0;
+}
+
+.HeaderInput {
+    width: 100%;           /* заполняет всю колонку */
+    min-width: 180px;      /* минимальная ширина для удобства */
+    max-width: 480px;      /* максимальная, если нужно ограничить */
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    color: #1e293b;
+    height: 40px;
+    box-sizing: border-box;
+    /* для правильного позиционирования в гриде */
+    margin: 0;
+}
+.HeaderInput:focus {
+    outline: none;
+    border-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.navMenuHeader a {
+    color: #1e293b;
+    text-decoration: none;
+    font-weight: 200;
+    font-size: 0.9rem;
+    cursor: pointer;
+
+    /* Убираем white-space: nowrap, чтобы текст переносился */
+    white-space: normal;
+    word-break: keep-all; /* Предотвращает разрыв слов, если они длинные */
+    /* Альтернатива: оставить nowrap, но тогда контейнер должен иметь overflow-x: auto */
+}
+
+.navMenuHeader a:hover {
+    color: #8b5cf6;
+}
+
+/* Адаптив */
+.navMenuHeader {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: flex-end; /* прижимаем навигацию к правому краю */
+
+}
+
+/* Адаптив — на мобильных переключаемся на вертикальный стек */
+@media (max-width: 768px) {
+    .bottomRow {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+    .HeaderInput {
+        max-width: none;
+        width: auto;
+    }
+    .navMenuHeader {
+        justify-content: space-between;
+        overflow-x: auto;
+    }
+}

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>react-MISA</title>
+
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/app/main.tsx"></script>
+    <script>
+      // Удаляем все атрибуты title у всех элементов на странице
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('[title]').forEach(el => el.removeAttribute('title'));
+      });
+      // Также перехватываем динамически добавленные элементы
+      new MutationObserver(mutations => {
+        mutations.forEach(() => {
+          document.querySelectorAll('[title]').forEach(el => el.removeAttribute('title'));
+        });
+      }).observe(document.body, { childList: true, subtree: true });
+    </script>
+  </body>
+</html>

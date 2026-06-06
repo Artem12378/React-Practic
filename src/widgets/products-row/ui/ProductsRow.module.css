@@ -1,0 +1,33 @@
+.rowSection {
+    margin: 2rem 0;
+    padding: 0 1rem;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #1e293b;
+}
+
+.productsGrid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 1200px) {
+    .productsGrid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+@media (max-width: 900px) {
+    .productsGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (max-width: 600px) {
+    .productsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

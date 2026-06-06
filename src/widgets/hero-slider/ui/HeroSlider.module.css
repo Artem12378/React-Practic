@@ -1,0 +1,127 @@
+.sliderSection {
+    margin: 1rem 0;
+    width: 100%;
+}
+
+.carousel {
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.slide {
+    position: relative;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f0f0;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 20%;
+    left: 10%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    text-align: left;
+}
+
+.overlay h2 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.overlay p {
+    margin: 0.5rem 0;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: #c49a6c;
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+}
+
+.button:hover {
+    background: #a87b4f;
+}
+
+.slide {
+    position: relative;
+    width: 100%;
+    height: 400px;          /* задай нужную высоту */
+    overflow: hidden;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;      /* картинка покрывает весь блок */
+    display: block;
+}
+
+/* Оверлей (текст) — прижат к низу */
+.overlay {
+    position: absolute;
+    bottom: 0;              /* прижимаем к нижнему краю */
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 70%, transparent 100%);
+    color: white;
+    padding: 2rem 2rem 1.5rem;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+/* Опционально: стили текста */
+.overlay h2 {
+    margin: 0;
+    font-size: 2rem;
+    color: #f0f0f0;
+}
+
+.overlay p {
+    margin: 0.5rem 0;
+}
+
+.overlay .button {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.5rem 1.2rem;
+    background: #c49a6c;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.overlay .button:hover {
+    background: #a87b4f;
+}
+
+
+@media (max-width: 768px) {
+    .slide {
+        height: 300px;
+    }
+    .overlay {
+        bottom: 10%;
+        left: 5%;
+        padding: 0.5rem 1rem;
+    }
+    .overlay h2 {
+        font-size: 1.2rem;
+    }
+}

@@ -1,0 +1,32 @@
+body, button, input, a, .HeaderCountry, .navMenuHeader a, .LogButton button {
+  font-family: 'Montserrat','Inter', sans-serif;
+  font-weight: 300; /* тонкое начертание */
+  letter-spacing: 0.02em; /* лёгкий воздух между буквами */
+}
+
+
+h1, h2, h3, h4, .logo, .footer-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+}
+/* Если нужно сделать некоторые элементы чуть жирнее (например, логотип Misa) */
+.logo text:first-child {
+  font-weight: 500 !important; /* или 600, чтобы выделялся */
+}
+
+/* Кнопки и ссылки при ховере можно делать чуть жирнее */
+.navMenuHeader a:hover,
+.LogButton button:hover {
+  font-weight: 400;
+}
+
+.globalContainer {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+@media (max-width: 768px) {
+  .global-container {
+    padding: 0 16px;          /* на мобилках поменьше */
+  }
+}
